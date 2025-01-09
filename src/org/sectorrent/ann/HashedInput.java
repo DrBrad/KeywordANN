@@ -7,7 +7,7 @@ public class HashedInput {
     private static final int INPUT_SIZE = 128;
 
     private static int hash(String word){
-        return Math.abs(word.hashCode()) % INPUT_SIZE;
+        return Math.abs(word.hashCode())%INPUT_SIZE;
     }
 
     public static double[] vectorize(String input){
@@ -32,7 +32,9 @@ public class HashedInput {
 
         magnitude = Math.sqrt(magnitude);
 
-        if (magnitude == 0.0) return vector;
+        if(magnitude == 0.0){
+            return vector;
+        }
 
         double[] normalized = new double[vector.length];
 
